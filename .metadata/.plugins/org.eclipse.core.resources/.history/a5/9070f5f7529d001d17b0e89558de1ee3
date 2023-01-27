@@ -1,0 +1,47 @@
+package service;
+
+import java.util.List;
+
+import database.DAO.BoardDAO;
+import database.Entity.BoardEntity;
+import dto.DeleteBoardDTO;
+import dto.InsertBoardDTO;
+import dto.UpdateBoardDTO;
+
+public class BoardService {
+	
+	private BoardDAO boardDao;
+	
+	public BoardService() {
+		boardDao = new BoardDAO();
+	}
+
+	public int postBoard(InsertBoardDTO insertBoardDto) {
+		
+		return boardDAO.insert(insertBoardDto);
+	}
+	
+	public List<BoardEntity> getBoardList(){
+		return boardDAO.find();
+	}
+	
+	public int patchBoard(UpdateBoardDTO updateBoardDto) {
+		
+		Integer id = updateBoardDto.getId();
+		
+		// 존재하는 Board id인지 검증
+		BoardEntity boardEntity = boardDAO.findById(id);
+		if (boardEntity == null) {
+			System.out.println("Does Not Exist Board id");
+			return 0;
+		}
+					
+		int result = boardDAO.update(updateBoardDto);
+		return result;
+	}
+	
+	public int deleteBoardDTO(DeleteBoardDTO deleteBoardDto) {
+		return boardDAO.delete(deleteBoardDto);
+	}
+	
+}

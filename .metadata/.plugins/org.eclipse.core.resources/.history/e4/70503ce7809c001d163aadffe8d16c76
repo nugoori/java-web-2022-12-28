@@ -1,0 +1,9 @@
+package database.Entity;
+
+
+// Entity : 데이터베이스의 테이블과 서로 매핑되는 Java Class
+public class BoardEntity {
+
+	
+	
+}

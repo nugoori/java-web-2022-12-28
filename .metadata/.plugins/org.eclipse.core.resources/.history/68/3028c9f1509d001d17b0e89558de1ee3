@@ -1,0 +1,12 @@
+package service;
+
+public class BoardService {
+
+	public int postBoard() {
+		boardDAO.insert(insertBoardDTO);
+	}
+	
+	
+	
+	
+}

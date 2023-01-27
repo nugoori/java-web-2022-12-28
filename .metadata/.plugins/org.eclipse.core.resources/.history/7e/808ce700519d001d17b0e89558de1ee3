@@ -1,0 +1,14 @@
+package service;
+
+public class BoardService {
+	
+	private BoardDAO boardDao = new BoaradDAO();
+
+	public int postBoard() {
+		boardDAO.insert(insertBoardDTO);
+	}
+	
+	
+	
+	
+}

@@ -1,0 +1,13 @@
+package database;
+
+public class DatabaseConnector {
+
+		private static final DATABASE_URL = "jdbc:mysql://127.0.0.1:3306";
+	
+	
+}
+
+
+
+
+

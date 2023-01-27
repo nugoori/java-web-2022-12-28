@@ -1,0 +1,62 @@
+package index;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class TestApplication {
+	
+	Connection connection = null;
+	
+	try {
+		// 1. mySQL connector Driver 로드
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		
+		// 2. MySQL Driver로 Connection 객체 생성
+		// 데이터베이스 URL, 사용자 이름(ID), 패스워드 필요
+		final String DATABASE_URL = "jdbc:mysql://127.0.0.1:3306/peed";
+		final String USER_NAME = "root";
+		final String USER_PASSWORD = "root";
+		
+		connection = DriverManager.getConnection(DATABASE_URL, USER_NAME, USER_PASSWORD);
+		
+		System.out.println("Database Connection Success!");
+
+		// connection 객체를 이용해서 Statement 객체 생성
+		statement = connection.createStatement();
+		// Statement 객체에 사용할 SQL문 작성
+		final String SQL = "SELECT * FROM Board";
+		// SQL문을 Statement 객체에 담아서 실행
+		statement.executeQuery(SQL);
+		// 실행 결과를 ResultSet 객체로 저장
+		resultSet = statement.executeQuery(SQL);
+		
+		while(resultSet.next()) {
+			Integer id = resultSet.getInt(1);
+			String boardTitle = resultSet.getString(2);
+			String boardContent = resultSet.getString(3);
+			
+			System.out.println("id : " + id + " / boardTitle : " + boardTitle + " / boardContent : " + boardContent);
+		}
+		
+		
+	} catch (Exception exception) {
+		exception.printStackTrace();
+		System.out.println("Database Connection Fail!");
+	} finally {
+		// 3. 사용한 Connection 객체 Close
+		try {
+			if (connection != null && !connection.isClosed())
+				connection.close();
+		} catch(Exception exception) {
+			exception.printStackTrace();
+		}
+	}
+	
+	
+	
+	
+
+}
+
+	
+}

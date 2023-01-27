@@ -1,0 +1,15 @@
+package database;
+
+public class DatabaseConnector {
+
+		private static final String DATABASE_URL = "jdbc:mysql://127.0.0.1:3306";
+		private static final String USER_NAME = "root";
+		private static final String USER_PASSWORD = "root";
+	
+	
+}
+
+
+
+
+

@@ -1,0 +1,46 @@
+package database.DAO;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import database.Entity.UserEntity;
+
+public class UserDAO {
+
+	// 데이터베이스에서 User 테이블 중 id가 입력받은 값에 해당하는 레코드의 모든 컬럼을 선택해서 반환
+	// SQL : SELECT * FROM User WHERE id = ?;
+	// 예상되는 반환 값 : 0 or 1개의 레코드
+	public UserEntity findById(Integer id) {
+		
+		UserEntity result = null;
+		
+		final String SQL = "SELECT * FROM User WHERE id = ?";
+		
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+		
+		try {
+			
+		} catch (Exception exception) {
+			exception.printStackTrace();
+		} finally {
+			try {
+				if (resultSet != null && !resultSet.isClosed())
+					resultSet.close();
+				if (preparedStatement != null && !preparedStatement.isClosed())
+					preparedStatement.close();
+				if (connection != null && !connection.isClosed())
+					connection.close();
+			} catch (Exception exception) {
+				
+			}
+		}
+		
+		return result;		
+	}
+	
+	
+	
+}

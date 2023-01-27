@@ -1,0 +1,16 @@
+package database.Entity;
+
+public class UserEntity {
+
+	private Integer id;
+	private String password;
+	private String name;
+	private String telNumber;
+	
+	
+	
+	
+	
+	
+	
+}

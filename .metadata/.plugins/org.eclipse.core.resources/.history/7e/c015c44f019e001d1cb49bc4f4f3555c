@@ -1,0 +1,5 @@
+package database.Entity;
+
+public class UserEntity {
+
+}
