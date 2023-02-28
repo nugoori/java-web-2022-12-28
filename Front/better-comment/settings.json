@@ -1,0 +1,93 @@
+{
+    "editor.minimap.enabled": false,
+    "editor.fontSize": 20,
+    "git.autofetch": true,
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "emmet.variables": {
+        "lang": "ko"
+    },
+    "liveServer.settings.CustomBrowser": "chrome",
+    "files.autoSave": "afterDelay",
+    "window.zoomLevel": 2,
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.colorTheme": "Visual Studio Dark",
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "better-comments.tags": [
+        {
+            "tag": "!",
+            "color": "#FF2D00",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "#ffffff",
+            "bold": true,
+            "italic": true
+        },
+        {
+            "tag": "?",
+            "color": "#00bb44",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "#",
+            "color": "#ffffff",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "#000000",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "^",
+            "color": "#ffff00",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": true,
+            "italic": false
+        },
+        {
+            "tag": "//",
+            "color": "#474747",
+            "strikethrough": true,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "todo",
+            "color": "#FF8C00",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "*",
+            "color": "#98C379",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "ref",
+            "color": "#000000",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "#ffffff",
+            "bold": true,
+            "italic": false
+        }
+    ]
+}
