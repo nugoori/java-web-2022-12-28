@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import com.jihoon.board.common.constant.ResponseMessage;
 import com.jihoon.board.dto.request.user.PatchProfileDto;
 import com.jihoon.board.dto.response.ResponseDto;
+import com.jihoon.board.dto.response.user.GetUserResponseDto;
 import com.jihoon.board.dto.response.user.PatchProfileResponseDto;
 import com.jihoon.board.entity.UserEntity;
 import com.jihoon.board.repository.UserRepository;
@@ -39,6 +40,23 @@ public class UserServiceImplements implements UserService {
 
         return ResponseDto.setSuccess(ResponseMessage.SUCCESS, data);
 
+    }
+
+    @Override
+    public ResponseDto<GetUserResponseDto> getUser(String email) {
+        
+        GetUserResponseDto data = null;
+
+        try {
+            UserEntity userEntity = userRepository.findByEmail(email);            
+            if (userEntity == null) return ResponseDto.setFailed(ResponseMessage.NOT_EXIST_USER);
+
+            data = new GetUserResponseDto(userEntity);
+        } catch (Exception exception) {
+            exception.printStackTrace();
+            return ResponseDto.setFailed(ResponseMessage.DATABASE_ERROR);
+        }
+        return ResponseDto.setSuccess(ResponseMessage.SUCCESS, data);
     }
 
 }
