@@ -323,6 +323,9 @@ public class BoardServiceImplements implements BoardService {
             boolean isEqualWriter = email.equals(boardEntity.getWriterEmail());
             if (!isEqualWriter) return ResponseDto.setFailed(ResponseMessage.NOT_PERMISSION);
 
+            commentRepository.deleteByBoardNumber(boardNumber);
+            likyRepository.deleteByBoardNumber(boardNumber);
+
             boardRepository.delete(boardEntity);
             data = new DeleteBoardResponseDto(true);
 
