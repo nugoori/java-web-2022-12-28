@@ -11,30 +11,40 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@ApiModel(value="본인이 작성한 게시물 리스트 가져오기 Response Body - data")
+@ApiModel(value="본인 작성 게시물 리스트 가져오기 Response Body - data")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class GetMyListResponseDto {
+
     @ApiModelProperty(value="게시물 번호", example="1", required=true)
     private int boardNumber;
-    @ApiModelProperty(value="게시물 제목", example="Board Title", required=true)
+
+    @ApiModelProperty(value="게시물 제목", example="Board Title!!!", required=true)
     private String boardTitle;
-    @ApiModelProperty(value="게시물 내용", example="Board Content", required=true)
+
+    @ApiModelProperty(value="게시물 내용", example="Board Content!!!", required=true)
     private String boardContent;
-    @ApiModelProperty(value="게시물 이미지 URL", example="Http://~", required=true)
+
+    @ApiModelProperty(value="게시물 이미지 URL", example="http://~", required=false)
     private String boardImgUrl;
-    @ApiModelProperty(value="게시물 작성 날짜", example="2023-02-03 17:20", required=true)
+
+    @ApiModelProperty(value="게시물 작성일시", example="2023-03-23 17:20", required=true)
     private String boardWriteDatetime;
-    @ApiModelProperty(value="조회 수", example="0", required=true)
+
+    @ApiModelProperty(value="조회 수", example="30", required=true)
     private int viewCount;
-    @ApiModelProperty(value="작성자 닉네임", example="nugoori", required=true)
+
+    @ApiModelProperty(value="작성자 닉네임", example="jiraynor", required=true)
     private String writerNickname;
-    @ApiModelProperty(value="작성자 프로필 이미지 URL", example="Http://~", required=true)
+
+    @ApiModelProperty(value="작성자 프로필 이미지 URL", example="http://~", required=false)
     private String writerProfileUrl;
-    @ApiModelProperty(value="댓글 수", example="0", required=true)
+
+    @ApiModelProperty(value="댓글 수", example="7", required=true)
     private int commentCount;
-    @ApiModelProperty(value="좋아요 수", example="0", required=true)
+
+    @ApiModelProperty(value="좋아요 수", example="27", required=true)
     private int likeCount;
 
     public GetMyListResponseDto(BoardEntity boardEntity) {

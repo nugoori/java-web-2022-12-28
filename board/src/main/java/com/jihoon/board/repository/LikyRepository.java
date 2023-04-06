@@ -17,5 +17,4 @@ public interface LikyRepository extends JpaRepository<LikyEntity, LikyPk> {
 
     @Transactional
     public void deleteByBoardNumber(int boardNumber);
-
 }

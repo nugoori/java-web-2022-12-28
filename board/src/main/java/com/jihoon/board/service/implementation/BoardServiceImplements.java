@@ -1,5 +1,10 @@
 package com.jihoon.board.service.implementation;
 
+import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.TemporalUnit;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,7 +59,6 @@ public class BoardServiceImplements implements BoardService {
         PostBoardResponseDto data = null;
 
         try {
-
             UserEntity userEntity = userRepository.findByEmail(email);
             if (userEntity == null) return ResponseDto.setFailed(ResponseMessage.NOT_EXIST_USER);
 
@@ -62,7 +66,6 @@ public class BoardServiceImplements implements BoardService {
             boardRepository.save(boardEntity);
 
             data = new PostBoardResponseDto(boardEntity);
-
         } catch(Exception exception) {
             exception.printStackTrace();
             return ResponseDto.setFailed(ResponseMessage.DATABASE_ERROR);
@@ -210,7 +213,6 @@ public class BoardServiceImplements implements BoardService {
         List<GetSearchListResponseDto> data = null;
 
         try {
-
             SearchWordLogEntity searchWordLogEntity = new SearchWordLogEntity(searchWord);
             searchWordLogRepository.save(searchWordLogEntity);
 
@@ -229,24 +231,6 @@ public class BoardServiceImplements implements BoardService {
 
         return ResponseDto.setSuccess(ResponseMessage.SUCCESS, data);
 
-    }
-    
-    public ResponseDto<List<GetTop3ListResponseDto>> getTop3List() {
-       
-        List<GetTop3ListResponseDto> data = null;
-       
-        try {
-
-            List<BoardEntity> boardList = boardRepository.findTop3ByOrderByLikeCountDesc();
-            data = GetTop3ListResponseDto.copyList(boardList);
-
-            
-    
-        } catch (Exception exception) {
-            exception.printStackTrace();
-            return ResponseDto.setFailed(ResponseMessage.DATABASE_ERROR);
-        }
-        return ResponseDto.setSuccess(ResponseMessage.SUCCESS, data);
     }
 
     public ResponseDto<GetTop15SearchWordResponseDto> getTop15SearchWord() {
@@ -316,7 +300,6 @@ public class BoardServiceImplements implements BoardService {
         DeleteBoardResponseDto data = null;
 
         try {
-
             BoardEntity boardEntity = boardRepository.findByBoardNumber(boardNumber);
             if (boardEntity == null) return ResponseDto.setFailed(ResponseMessage.NOT_EXIST_BOARD);
 
@@ -338,4 +321,23 @@ public class BoardServiceImplements implements BoardService {
 
     }
 
+    public ResponseDto<List<GetTop3ListResponseDto>> getTop3List() {
+        
+        List<GetTop3ListResponseDto> data = null;
+        Date aWeekAgoDate = Date.from(Instant.now().minus(7, ChronoUnit.DAYS));
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String aWeekAgo = simpleDateFormat.format(aWeekAgoDate);
+
+        try {
+            List<BoardEntity> boardList = boardRepository.findTop3ByBoardWriteDatetimeGreaterThanOrderByLikeCountDesc(aWeekAgo);
+            data = GetTop3ListResponseDto.copyList(boardList);
+
+        } catch (Exception exception) {
+            exception.printStackTrace();
+            return ResponseDto.setFailed(ResponseMessage.DATABASE_ERROR);
+        }
+
+        return ResponseDto.setSuccess(ResponseMessage.SUCCESS, data);
+
+    }
 }

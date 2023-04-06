@@ -1,6 +1,5 @@
 package com.jihoon.board.provider;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -14,22 +13,20 @@ import org.springframework.web.socket.handler.TextWebSocketHandler;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-
 @Data
 @AllArgsConstructor
 class SocketGroup {
     private String room;
     private WebSocketSession webSocketSession;
 }
-
 @Component
 public class SocketProvider extends TextWebSocketHandler {
-
-    private List<SocketGroup> sessionList = new ArrayList<>();
     
+    private List<SocketGroup> sessionList = new ArrayList<>();
+
     @Override
     public void afterConnectionEstablished(WebSocketSession webSocketSession) {
-        System.out.println("Socket Connected!");
+        System.out.println("Socket Connected!!");
         System.out.println(webSocketSession.getHandshakeHeaders().getFirst("room"));
         
         String room = webSocketSession.getHandshakeHeaders().getFirst("room");
@@ -39,13 +36,11 @@ public class SocketProvider extends TextWebSocketHandler {
     @Override
     protected void handleTextMessage(WebSocketSession webSocketSession, TextMessage textMessage) throws Exception {
         String messagePayload = textMessage.getPayload();
-        
         String room = webSocketSession.getHandshakeHeaders().getFirst("room");
-    
+
         for (SocketGroup socketGroup: sessionList) {
-            if (socketGroup.getRoom().equals(room)) {
+            if (socketGroup.getRoom().equals(room))
                 socketGroup.getWebSocketSession().sendMessage(textMessage);
-            }
         }
     }
 
@@ -56,10 +51,11 @@ public class SocketProvider extends TextWebSocketHandler {
         System.out.println(closeStatus.toString());
         
         for (SocketGroup socketGroup: sessionList) {
-            if (socketGroup.getWebSocketSession().equals(webSocketSession)){
-            sessionList.remove(socketGroup);
+            if (socketGroup.getWebSocketSession().equals(webSocketSession)) {
+                sessionList.remove(socketGroup);
             }
         }
+        
     }
-    
+
 }

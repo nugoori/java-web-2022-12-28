@@ -15,12 +15,15 @@ public class PatchBoardDto {
     @ApiModelProperty(value="게시물 번호", example="1", required=true)
     @Min(1)
     private int boardNumber;
-    @ApiModelProperty(value="게시물 제목", example="Modified title", required=true)
+
+    @ApiModelProperty(value="게시물 제목", example="Modified Title!!", required=true)
     @NotBlank
     private String boardTitle;
-    @ApiModelProperty(value="게시물 내용", example="Modified Content", required=true)
+
+    @ApiModelProperty(value="게시물 내용", example="Modified Content!!", required=true)
     @NotBlank
     private String boardContent;
+
     @ApiModelProperty(value="게시물 이미지 URL", example="http://~", required=false)
     private String boardImgUrl;
 }

@@ -32,7 +32,8 @@ public class FileController {
     @PostMapping(UPLOAD)
     public String upload(
         @ApiParam(value="업로드할 파일", required=true)
-        @RequestParam("file") MultipartFile file) {
+        @RequestParam("file") MultipartFile file
+    ) {
         String response = fileService.upload(file);
         return response;
     }
@@ -41,7 +42,8 @@ public class FileController {
     @GetMapping(value=GET_FILE, produces={MediaType.ALL_VALUE})
     public Resource getFile(
         @ApiParam(value="파일명", example="example.png", required=true)
-        @PathVariable("fileName") String fileName) {
+        @PathVariable("fileName") String fileName
+    ) {
         Resource response = fileService.getFile(fileName);
         return response;
     }

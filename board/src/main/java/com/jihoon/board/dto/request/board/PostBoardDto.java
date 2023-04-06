@@ -11,12 +11,14 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class PostBoardDto {
-    @ApiModelProperty(value="게시물 제목", example="Board Title", required=true)
+    @ApiModelProperty(value="게시물 제목", example="Board Title!!", required=true)
     @NotBlank
     private String boardTitle;
-    @ApiModelProperty(value="게시물 내용", example="Board Content", required=true)
+
+    @ApiModelProperty(value="게시물 내용", example="Board Content!!", required=true)
     @NotBlank
     private String boardContent;
+
     @ApiModelProperty(value="게시물 이미지 URL", example="http://~", required=false)
     private String boardImgUrl;
 }

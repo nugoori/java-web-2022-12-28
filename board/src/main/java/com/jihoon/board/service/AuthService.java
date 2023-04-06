@@ -7,11 +7,6 @@ import com.jihoon.board.dto.response.auth.SignInResponseDto;
 import com.jihoon.board.dto.response.auth.SignUpResponseDto;
 
 public interface AuthService {
-    
     public ResponseDto<SignUpResponseDto> signUp(SignUpDto dto);
-
     public ResponseDto<SignInResponseDto> signIn(SignInDto dto);
-
-
-
 }

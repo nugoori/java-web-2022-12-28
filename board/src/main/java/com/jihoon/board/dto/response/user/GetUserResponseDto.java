@@ -13,15 +13,19 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class GetUserResponseDto {
-    @ApiModelProperty(value="유저 이메일", example="yir@akak.com", required=true)
+    @ApiModelProperty(value="사용자 이메일", example="jiraynor@naver.com", required=true)
     private String email;
-    @ApiModelProperty(value="유저 닉네임", example="nugoori", required=true)
+
+    @ApiModelProperty(value="사용자 닉네임", example="jiraynor", required=true)
     private String nickname;
-    @ApiModelProperty(value="유저 휴대전화 번호", example="010-0000-0000", required=true)
+
+    @ApiModelProperty(value="사용자 휴대전화번호", example="010-1234-9876", required=true)
     private String telNumber;
-    @ApiModelProperty(value="유저 주소", example="부산광역시 해운대구", required=true)
+
+    @ApiModelProperty(value="사용자 주소", example="부산광역시 부산진구", required=true)
     private String address;
-    @ApiModelProperty(value="유저 프로필 이미지 URL", example="Http://~", required=true)
+
+    @ApiModelProperty(value="사용자 프로필 URL", example="http://", required=true)
     private String profile;
 
     public GetUserResponseDto(UserEntity userEntity) {

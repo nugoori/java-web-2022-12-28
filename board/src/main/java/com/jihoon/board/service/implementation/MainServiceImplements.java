@@ -4,7 +4,6 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import com.jihoon.board.service.MainService;
@@ -38,7 +37,6 @@ public class MainServiceImplements implements MainService {
         Document document = Jsoup.connect("https://naver.com").get();
 
         Elements elements = document.select("#NM_FAVORITE > div.group_nav > ul.list_nav.NM_FAVORITE_LIST > li > a");
-        System.out.println(elements.size());
 
         for (Element element: elements) {
             System.out.println(element.absUrl("href"));

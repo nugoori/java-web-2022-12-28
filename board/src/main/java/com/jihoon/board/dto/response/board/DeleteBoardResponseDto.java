@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@ApiModel(value="특정 게시물 삭제 Response Body - data")
+@ApiModel(value="특정 게시물 삭제 Response body - data")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
