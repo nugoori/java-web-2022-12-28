@@ -12,9 +12,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class ValidateEmailDto {
-    @ApiModelProperty(value="유저 이메일", example = "id@email.com", required=true)
+    @ApiModelProperty(value="유저 이메일", example="id@email.com", required=true)
     @NotBlank
     @Email
     private String email;
-
 }

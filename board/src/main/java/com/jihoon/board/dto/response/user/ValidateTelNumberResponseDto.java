@@ -6,12 +6,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@ApiModel(value="전화번호 중복 체크 Response Body - data")
+@ApiModel(value="휴대전화번호 중복체크 Response Body - data")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class ValidateTelNumberResponseDto {
-    @ApiModelProperty(value="중복 체크 결과", example="true", required=true)
+    @ApiModelProperty(value="중복체크 결과", example="true", required=true)
     private boolean result;
-    
 }

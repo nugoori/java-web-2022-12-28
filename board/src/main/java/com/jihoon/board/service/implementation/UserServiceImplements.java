@@ -4,19 +4,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.jihoon.board.common.constant.ResponseMessage;
-
 import com.jihoon.board.dto.request.user.PatchProfileDto;
 import com.jihoon.board.dto.request.user.ValidateEmailDto;
 import com.jihoon.board.dto.request.user.ValidateNicknameDto;
 import com.jihoon.board.dto.request.user.ValidateTelNumberDto;
-
 import com.jihoon.board.dto.response.ResponseDto;
 import com.jihoon.board.dto.response.user.GetUserResponseDto;
 import com.jihoon.board.dto.response.user.PatchProfileResponseDto;
 import com.jihoon.board.dto.response.user.ValidateEmailResponseDto;
 import com.jihoon.board.dto.response.user.ValidateNicknameResponseDto;
 import com.jihoon.board.dto.response.user.ValidateTelNumberResponseDto;
-
 import com.jihoon.board.entity.UserEntity;
 import com.jihoon.board.repository.UserRepository;
 import com.jihoon.board.service.UserService;
@@ -50,7 +47,7 @@ public class UserServiceImplements implements UserService {
         return ResponseDto.setSuccess(ResponseMessage.SUCCESS, data);
 
     }
- 
+
     public ResponseDto<ValidateEmailResponseDto> validateEmail(ValidateEmailDto dto) {
         ValidateEmailResponseDto data = null;
 
@@ -63,6 +60,7 @@ public class UserServiceImplements implements UserService {
             exception.printStackTrace();
             return ResponseDto.setFailed(ResponseMessage.DATABASE_ERROR);
         }
+
         return ResponseDto.setSuccess(ResponseMessage.SUCCESS, data);
     }
 
@@ -78,6 +76,7 @@ public class UserServiceImplements implements UserService {
             exception.printStackTrace();
             return ResponseDto.setFailed(ResponseMessage.DATABASE_ERROR);
         }
+
         return ResponseDto.setSuccess(ResponseMessage.SUCCESS, data);
     }
 
@@ -93,6 +92,7 @@ public class UserServiceImplements implements UserService {
             exception.printStackTrace();
             return ResponseDto.setFailed(ResponseMessage.DATABASE_ERROR);
         }
+
         return ResponseDto.setSuccess(ResponseMessage.SUCCESS, data);
     }
 
@@ -114,4 +114,3 @@ public class UserServiceImplements implements UserService {
     }
 
 }
-
