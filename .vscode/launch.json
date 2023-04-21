@@ -1,0 +1,273 @@
+{
+    // IntelliSense를 사용하여 가능한 특성에 대해 알아보세요.
+    // 기존 특성에 대한 설명을 보려면 가리킵니다.
+    // 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "BoardApplication",
+            "request": "launch",
+            "mainClass": "com.jihoon.board.BoardApplication",
+            "projectName": "board"
+        },
+        {
+            "type": "java",
+            "name": "BoardApplication(1)",
+            "request": "launch",
+            "mainClass": "com.koreait.board.BoardApplication",
+            "projectName": "board"
+        },
+        {
+            "type": "java",
+            "name": "Example01",
+            "request": "launch",
+            "mainClass": "helloWorld/chapter_01.Example01",
+            "projectName": "helloWorld"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "board.Main",
+            "projectName": "javaBasic"
+        },
+        {
+            "type": "java",
+            "name": "Example01(1)",
+            "request": "launch",
+            "mainClass": "chapter01.Example01",
+            "projectName": "javaBasic"
+        },
+        {
+            "type": "java",
+            "name": "Example02",
+            "request": "launch",
+            "mainClass": "chapter01.Example02",
+            "projectName": "javaBasic"
+        },
+        {
+            "type": "java",
+            "name": "Example03",
+            "request": "launch",
+            "mainClass": "chapter01.Example03",
+            "projectName": "javaBasic"
+        },
+        {
+            "type": "java",
+            "name": "Example04",
+            "request": "launch",
+            "mainClass": "chapter01.Example04",
+            "projectName": "javaBasic"
+        },
+        {
+            "type": "java",
+            "name": "Example05",
+            "request": "launch",
+            "mainClass": "chapter01.Example05",
+            "projectName": "javaBasic"
+        },
+        {
+            "type": "java",
+            "name": "Example06",
+            "request": "launch",
+            "mainClass": "chapter01.Example06",
+            "projectName": "javaBasic"
+        },
+        {
+            "type": "java",
+            "name": "Example07",
+            "request": "launch",
+            "mainClass": "chapter01.Example07",
+            "projectName": "javaBasic"
+        },
+        {
+            "type": "java",
+            "name": "Sample01",
+            "request": "launch",
+            "mainClass": "chapter01.Sample01",
+            "projectName": "javaBasic"
+        },
+        {
+            "type": "java",
+            "name": "Sample02",
+            "request": "launch",
+            "mainClass": "chapter01.Sample02",
+            "projectName": "javaBasic"
+        },
+        {
+            "type": "java",
+            "name": "Example01(2)",
+            "request": "launch",
+            "mainClass": "chapter02.Example01",
+            "projectName": "javaBasic"
+        },
+        {
+            "type": "java",
+            "name": "Example02(1)",
+            "request": "launch",
+            "mainClass": "chapter02.Example02",
+            "projectName": "javaBasic"
+        },
+        {
+            "type": "java",
+            "name": "Example03(1)",
+            "request": "launch",
+            "mainClass": "chapter02.Example03",
+            "projectName": "javaBasic"
+        },
+        {
+            "type": "java",
+            "name": "Example04(1)",
+            "request": "launch",
+            "mainClass": "chapter02.Example04",
+            "projectName": "javaBasic"
+        },
+        {
+            "type": "java",
+            "name": "Example05(1)",
+            "request": "launch",
+            "mainClass": "chapter02.Example05",
+            "projectName": "javaBasic"
+        },
+        {
+            "type": "java",
+            "name": "Example06(1)",
+            "request": "launch",
+            "mainClass": "chapter02.Example06",
+            "projectName": "javaBasic"
+        },
+        {
+            "type": "java",
+            "name": "Sample01(1)",
+            "request": "launch",
+            "mainClass": "chapter02.Sample01",
+            "projectName": "javaBasic"
+        },
+        {
+            "type": "java",
+            "name": "Abstract",
+            "request": "launch",
+            "mainClass": "chapter03.Abstract",
+            "projectName": "javaBasic"
+        },
+        {
+            "type": "java",
+            "name": "Example01(3)",
+            "request": "launch",
+            "mainClass": "chapter03.Example01",
+            "projectName": "javaBasic"
+        },
+        {
+            "type": "java",
+            "name": "Example02(2)",
+            "request": "launch",
+            "mainClass": "chapter03.Example02",
+            "projectName": "javaBasic"
+        },
+        {
+            "type": "java",
+            "name": "Example3",
+            "request": "launch",
+            "mainClass": "chapter03.Example3",
+            "projectName": "javaBasic"
+        },
+        {
+            "type": "java",
+            "name": "Polymorphism",
+            "request": "launch",
+            "mainClass": "chapter03.Polymorphism",
+            "projectName": "javaBasic"
+        },
+        {
+            "type": "java",
+            "name": "Example01(4)",
+            "request": "launch",
+            "mainClass": "chapter04.Example01",
+            "projectName": "javaBasic"
+        },
+        {
+            "type": "java",
+            "name": "Example02(3)",
+            "request": "launch",
+            "mainClass": "chapter04.Example02",
+            "projectName": "javaBasic"
+        },
+        {
+            "type": "java",
+            "name": "Example03(2)",
+            "request": "launch",
+            "mainClass": "chapter04.Example03",
+            "projectName": "javaBasic"
+        },
+        {
+            "type": "java",
+            "name": "Example04(2)",
+            "request": "launch",
+            "mainClass": "chapter04.Example04",
+            "projectName": "javaBasic"
+        },
+        {
+            "type": "java",
+            "name": "Example05(2)",
+            "request": "launch",
+            "mainClass": "chapter04.Example05",
+            "projectName": "javaBasic"
+        },
+        {
+            "type": "java",
+            "name": "Example06(2)",
+            "request": "launch",
+            "mainClass": "chapter04.Example06",
+            "projectName": "javaBasic"
+        },
+        {
+            "type": "java",
+            "name": "Example07(1)",
+            "request": "launch",
+            "mainClass": "chapter04.Example07",
+            "projectName": "javaBasic"
+        },
+        {
+            "type": "java",
+            "name": "Sample01(2)",
+            "request": "launch",
+            "mainClass": "chapter04.Sample01",
+            "projectName": "javaBasic"
+        },
+        {
+            "type": "java",
+            "name": "Example01(5)",
+            "request": "launch",
+            "mainClass": "chapter05.Example01",
+            "projectName": "javaBasic"
+        },
+        {
+            "type": "java",
+            "name": "Example02(4)",
+            "request": "launch",
+            "mainClass": "chapter05.Example02",
+            "projectName": "javaBasic"
+        },
+        {
+            "type": "java",
+            "name": "MainApplication",
+            "request": "launch",
+            "mainClass": "index.MainApplication",
+            "projectName": "mysqlConnect"
+        },
+        {
+            "type": "java",
+            "name": "TestApplication",
+            "request": "launch",
+            "mainClass": "index.TestApplication",
+            "projectName": "mysqlConnect"
+        }
+    ]
+}
